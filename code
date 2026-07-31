@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bunny Letters 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Arial",sans-serif;
+}
+
+body{
+background:linear-gradient(#dff4ff,#ffffff);
+color:#333;
+transition:.3s;
+}
+
+body.dark{
+background:#17212b;
+color:white;
+}
+
+header{
+background:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.dark header,
+.dark .card,
+.dark footer{
+background:#243447;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#4aa3ff;
+}
+
+nav a{
+text-decoration:none;
+color:#4aa3ff;
+font-weight:bold;
+margin:8px;
+}
+
+.hero{
+text-align:center;
+padding:70px 20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+}
+
+.button{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#7ec8ff;
+color:white;
+border-radius:40px;
+text-decoration:none;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+margin:25px 0;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.member{
+display:inline-block;
+background:#eef8ff;
+padding:15px 25px;
+margin:10px;
+border-radius:30px;
+color:#4aa3ff;
+font-weight:bold;
+}
+
+input,textarea,select{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:15px;
+background:#f2f8ff;
+font-size:16px;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#7ec8ff;
+color:white;
+font-size:17px;
+cursor:pointer;
+}
+
+button:hover,
+.button:hover{
+background:#4aa3ff;
+}
+
+.letter{
+background:#eef8ff;
+padding:20px;
+border-radius:20px;
+margin:15px 0;
+}
+
+.dark .letter{
+background:#31475a;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.gallery div{
+height:150px;
+background:#eef8ff;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+}
+
+.counter{
+font-size:40px;
+color:#4aa3ff;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:white;
+margin-top:50px;
+}
+
+#darkButton{
+position:fixed;
+bottom:20px;
+right:20px;
+border-radius:50%;
+width:60px;
+height:60px;
+font-size:25px;
+}
+
+@media(max-width:700px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+🐰 Bunny Letters
+</div>
+
+
+<nav>
+<a href="#home">Home</a>
+<a href="#write">Write</a>
+<a href="#letters">Letters</a>
+<a href="#community">Community</a>
+</nav>
+
+
+</header>
+
+
+<section class="hero" id="home">
+
+<h1>💙 Welcome Bunnies!</h1>
+
+<p>
+A fan-made space where Bunnies can share messages,
+memories, artwork, and kind letters together.
+</p>
+
+
+<a class="button" href="#write">
+Write a Letter 💌
+</a>
+
+</section>
+
+
+<section class="section">
+
+<h2>🌸 NewJeans Members</h2>
+
+<div class="member">🐰 Minji</div>
+<div class="member">🌼 Hanni</div>
+<div class="member">🌻 Danielle</div>
+<div class="member">🌷 Haerin</div>
+<div class="member">🌺 Hyein</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="card">
+
+<h2>🐰 Bunny Count</h2>
+
+<p>
+Bunnies who visited this page:
+</p>
+
+<div class="counter" id="counter">
+0
+</div>
+
+</div>
+
+</section> 
+<section class="section" id="write">
+
+<div class="card">
+
+<h2>💌 Write a Letter</h2>
+
+<p>
+Leave a kind message for NewJeans and the Bunny community.
+</p>
+
+
+<input id="nickname" placeholder="Your Bunny nickname">
+
+
+<select id="memberSelect">
+
+<option>All Members</option>
+<option>Minji</option>
+<option>Hanni</option>
+<option>Danielle</option>
+<option>Haerin</option>
+<option>Hyein</option>
+
+</select>
+
+
+<textarea 
+id="message"
+rows="8"
+placeholder="Write your letter here..."
+></textarea>
+
+
+<button onclick="addLetter()">
+Send Letter 💙
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<section class="section" id="letters">
+
+<div class="card">
+
+<h2>💙 Bunny Letter Wall</h2>
+
+<input 
+id="search"
+placeholder="Search letters..."
+onkeyup="searchLetters()"
+>
+
+
+<div id="letterWall">
+
+<div class="letter">
+🐰 BunnyStar:
+<br>
+Thank you for your amazing music! You make so many people happy.
+</div>
+
+
+<div class="letter">
+🌸 BlueRabbit:
+<br>
+Your songs always make my day brighter.
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="section" id="community">
+
+<div class="card">
+
+<h2>🐰 Bunny Community</h2>
+
+<p>
+A place for Bunnies to share:
+</p>
+
+
+<ul>
+
+<li>🎨 Fan art</li>
+
+<li>🎵 Favourite songs</li>
+
+<li>💙 Concert memories</li>
+
+<li>✨ Fan projects</li>
+
+<li>🌎 Messages from Bunnies worldwide</li>
+
+</ul>
+
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="card">
+
+<h2>🎨 Bunny Gallery</h2>
+
+<p>
+A space for creative Bunny projects.
+</p>
+
+
+<div class="gallery">
+
+
+<div>
+🎨
+</div>
+
+
+<div>
+📸
+</div>
+
+
+<div>
+✨
+</div>
+
+
+<div>
+🐰
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section class="section">
+
+<div class="card">
+
+<h2>📖 Bunny Memories</h2>
+
+
+<p>
+Share your favourite moments as a Bunny:
+</p>
+
+
+<br>
+
+
+<div class="letter">
+
+💙 First discovered NewJeans:
+<br><br>
+Write your story here...
+
+</div>
+
+
+<div class="letter">
+
+🌸 Favourite song:
+<br><br>
+Tell other Bunnies your favourite track.
+
+</div>
+
+
+<div class="letter">
+
+🐰 Favourite performance:
+<br><br>
+Share a special memory.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="card">
+
+<h2>🌎 Bunny Worldwide</h2>
+
+<p>
+Bunnies from different countries can come together,
+share love, and celebrate NewJeans.
+</p>
+
+
+<br>
+
+
+<div class="member">
+🇰🇷 Korea
+</div>
+
+
+<div class="member">
+🇯🇵 Japan
+</div>
+
+
+<div class="member">
+🇺🇸 USA
+</div>
+
+
+<div class="member">
+🇬🇧 UK
+</div>
+
+
+<div class="member">
+🌎 Worldwide
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<button id="darkButton" onclick="darkMode()">
+🌙
+</button>
+
+
+<footer>
+
+<p>
+Made with 💙 by Bunnies
+</p>
+
+<br>
+
+<p>
+This is an unofficial fan-made website.
+It is not connected with NewJeans, ADOR, HYBE, or any official organization.
+</p>
+
+</footer>
+<script>
+
+
+// Bunny visitor counter
+
+let visits = localStorage.getItem("bunnyVisits");
+
+if(!visits){
+    visits = 1;
+}else{
+    visits++;
+}
+
+localStorage.setItem("bunnyVisits", visits);
+
+document.getElementById("counter").innerHTML = visits;
+
+
+
+
+// Save and display letters
+
+let letters = JSON.parse(localStorage.getItem("bunnyLetters")) || [];
+
+
+function showLetters(){
+
+let wall = document.getElementById("letterWall");
+
+wall.innerHTML="";
+
+
+letters.forEach(function(letter){
+
+let box=document.createElement("div");
+
+box.className="letter";
+
+
+box.innerHTML =
+"🐰 <b>"+letter.name+"</b>"
++
+"<br>"
++
+"💙 To: "+letter.member
++
+"<br><br>"
++
+letter.text;
+
+
+wall.appendChild(box);
+
+
+});
+
+
+}
+
+
+
+function addLetter(){
+
+let name=document.getElementById("nickname").value;
+
+let member=document.getElementById("memberSelect").value;
+
+let text=document.getElementById("message").value;
+
+
+if(name==="" || text===""){
+
+alert("Please complete your nickname and letter 🐰");
+
+return;
+
+}
+
+
+
+let newLetter={
+
+name:name,
+
+member:member,
+
+text:text
+
+};
+
+
+
+letters.unshift(newLetter);
+
+
+localStorage.setItem(
+"bunnyLetters",
+JSON.stringify(letters)
+);
+
+
+
+showLetters();
+
+
+
+document.getElementById("nickname").value="";
+
+document.getElementById("message").value="";
+
+
+alert("Your Bunny letter has been added! 💙");
+
+
+}
+
+
+
+
+// Search letters
+
+
+function searchLetters(){
+
+let input=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+let allLetters=document
+.querySelectorAll(".letter");
+
+
+
+allLetters.forEach(function(letter){
+
+
+if(letter.innerText
+.toLowerCase()
+.includes(input)){
+
+
+letter.style.display="block";
+
+
+}else{
+
+
+letter.style.display="none";
+
+
+}
+
+
+});
+
+
+}
+
+
+
+
+// Dark mode
+
+
+function darkMode(){
+
+document.body.classList.toggle("dark");
+
+
+let mode=document.body.classList.contains("dark");
+
+
+localStorage.setItem(
+"darkMode",
+mode
+);
+
+
+}
+
+
+
+// Keep dark mode after refresh
+
+
+if(localStorage.getItem("darkMode")=="true"){
+
+document.body.classList.add("dark");
+
+}
+
+
+
+// Load saved letters
+
+
+showLetters();
+
+
+
+</script>
