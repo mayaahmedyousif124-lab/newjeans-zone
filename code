@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunny Letters</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(#dff4ff,#ffffff);
+color:#333;
+}
+
+header{
+background:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#4aa3ff;
+}
+
+nav a{
+text-decoration:none;
+margin:10px;
+color:#4aa3ff;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+}
+
+.button{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#7ec8ff;
+color:white;
+border-radius:40px;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+}
+
+.button:hover{
+background:#59b6ff;
+}
+
+.section{
+padding:60px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+input,textarea{
+width:100%;
+padding:15px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:15px;
+border:none;
+background:#f2f8ff;
+}
+
+button{
+padding:15px 30px;
+background:#7ec8ff;
+border:none;
+color:white;
+border-radius:30px;
+font-size:17px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:60px;
+background:white;
+}
+
+.member{
+display:inline-block;
+background:#eef8ff;
+padding:15px 25px;
+margin:10px;
+border-radius:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🐰 Bunny Letters</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#letters">Write</a>
+<a href="#community">Community</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>💙 Welcome Bunnies!</h1>
+
+<p>
+Share kind messages, write heartfelt letters, and celebrate NewJeans together in a cozy fan community.
+</p>
+
+<a class="button" href="#letters">Write a Letter</a>
+
+</section>
+
+<section class="section">
+
+<h2>Members</h2>
+
+<div class="member">🌸 Minji</div>
+<div class="member">🌼 Hanni</div>
+<div class="member">🌻 Danielle</div>
+<div class="member">🌷 Haerin</div>
+<div class="member">🌺 Hyein</div>
+
+</section>
+
+<section class="section" id="letters">
+
+<div class="card">
+
+<h2>💌 Write a Letter</h2>
+
+<input placeholder="Your nickname">
+
+<select style="width:100%;padding:15px;border-radius:15px;border:none;background:#f2f8ff;margin-bottom:15px;">
+<option>All Members</option>
+<option>Minji</option>
+<option>Hanni</option>
+<option>Danielle</option>
+<option>Haerin</option>
+<option>Hyein</option>
+</select>
+
+<textarea rows="8" placeholder="Write your letter here..."></textarea>
+
+<button>Send Letter</button>
+
+</div>
+
+</section>
+
+<section class="section" id="community">
+
+<div class="card">
+
+<h2>🐰 Bunny Community</h2>
+
+<p>
+Share fan projects, encouraging messages, artwork, and celebrate milestones together in a positive space.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+Made with 💙 by Bunnies
+
+</footer>
+
+</body>
+</html>
